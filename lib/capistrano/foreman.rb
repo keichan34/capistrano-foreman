@@ -15,17 +15,17 @@ Capistrano::Configuration.instance(:must_exist).load do |configuration|
 
     desc "Start the application services"
     task :start, roles: :app do
-      sudo "service #{options[:app]} start"
+      sudo "service sites/#{options[:app]} start"
     end
 
     desc "Stop the application services"
     task :stop, roles: :app do
-      sudo "service #{options[:app]} stop"
+      sudo "service sites/#{options[:app]} stop"
     end
 
     desc "Restart the application services"
     task :restart, roles: :app do
-      run "sudo service #{options[:app]} start || sudo service #{options[:app]}  restart"
+      run "sudo service sites/#{options[:app]} start || sudo service sites/#{options[:app]}  restart"
     end
 
     def options

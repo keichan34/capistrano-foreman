@@ -1,6 +1,6 @@
 Capistrano::Configuration.instance(:must_exist).load do |configuration|
 
-  _cset :foreman_sudo, "sudo"
+  _cset :foreman_sudo, "rvmsudo"
   _cset :foreman_upstart_path, "/etc/init/sites"
   _cset :foreman_options, {}
   _cset :foreman_use_binstubs, false
